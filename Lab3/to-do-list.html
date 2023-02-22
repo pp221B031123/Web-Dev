@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To-Do List</title>
+    <style>
+        body
+        {
+	        background-color: cadetblue;
+	        font-size: large;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        h1
+        {
+	        color:white;
+	        font-size: xxx-large;
+            font-family: "Segoe UI", sans-serif;
+        }
+        #add-task-form
+        {
+	        display: flex;
+	        flex-direction: row;
+	        margin-bottom: 3%;
+        }
+        #newTaskNaming
+        {
+	        width: 50vw;
+	        font-family: serif;
+	        font-size: large;
+	        padding: 1%;
+	        margin-right: 1%;
+        }
+        #addButton
+        {
+            font-family: serif;
+            font-size: large;
+	        color:white;
+	        background-color: rgb(100, 150, 250);
+            border-radius: 5px;
+	        border-color: gray;
+            padding: 1%;
+        }
+        #tasks
+        {
+	        background-color:white;
+	        border-color: gray;
+	        outline-style: solid;
+	        outline-width: 1px;
+	        padding: 2px;
+	        font-size: large;
+            display: flex;
+            flex-direction: column;
+        }
+        .taskObjects
+        {
+	        background-color: white;
+	        margin: 1px;
+	        border-color: cadetblue;
+	        border-width: 1px;
+	        border-bottom-style: solid;
+	        width: 100%;
+            display: flex;
+            flex-direction: row;
+	        justify-content: space-between;
+	        align-items: center;
+        }
+		.deleteButtons
+        {
+			margin: 2px;
+            font-family: serif;
+            font-size: medium;
+            color:white;
+            border-radius: 5px;
+            border-color: gray;
+            padding: 0.5%;
+			background-color:red;
+			text-decoration: none;
+		}
+    </style>
+</head>
+<body>
+    <h1>My To-Do List:</h1>
+    <div id="main">
+        <form method="post" id="add-task-form">
+            <input type="text" placeholder="New Task" id="newTaskNaming">
+            <button type="submit" id="addButton">Add</button>
+        </form>
+		<div id="tasks"><!--
+			<div class="taskObjects">
+				<input type="checkbox">
+				first task
+				<input type="button" class="deleteButtons" onclick="deleteTaskFunction(99)" value="delete">
+			</div> -->
+		</div>
+    </div>
+	<script>
+		let numberOfTasks=0;
+		const form = document.getElementById("add-task-form");
+        form.addEventListener("submit", (event) =>{
+            event.preventDefault();
+			if (form.elements[0].value === "")
+            {
+                alert("Write a task!");
+                return;
+            }
+            numberOfTasks= numberOfTasks + 1;
+			let nom = numberOfTasks;
+
+            let newTask = document.createTextNode(form.elements[0].value);
+
+            let newTaskObject = document.createElement("div");
+            newTaskObject.id="task"+numberOfTasks.toString();
+            newTaskObject.className = "taskObjects";
+
+            let newCheckbox = document.createElement("input");
+            newCheckbox.type="checkbox";
+            newCheckbox.id = "taskCheckbox"+numberOfTasks.toString();
+            newCheckbox.className = "taskCheckboxes";
+            newCheckbox.onclick = function() {taskCheckedFunction(nom, newCheckbox.checked)};
+
+            let newDeleteButton = document.createElement("input");
+            newDeleteButton.type = "button";
+            newDeleteButton.id = "taskDeleteButton"+numberOfTasks.toString();
+            newDeleteButton.className = "deleteButtons";
+            newDeleteButton.value="delete";
+            newDeleteButton.onclick = function() {deleteTaskFunction(nom)};
+
+            newTaskObject.appendChild(newCheckbox);
+            newTaskObject.appendChild(newTask);
+            newTaskObject.appendChild(newDeleteButton);
+
+
+            let box = document.getElementById("tasks");
+            box.appendChild(newTaskObject);
+
+
+			form.elements[0].value="";
+        })
+        function deleteTaskFunction(nom)
+        {
+            let box = document.getElementById("tasks");
+            let taskToDelete = document.getElementById("task" + nom.toString())
+	        box.removeChild(taskToDelete);
+        }
+        function taskCheckedFunction(nom, checked)
+        {
+            let task = document.getElementById("task" + nom.toString());
+            let deleteButton = document.getElementById("taskDeleteButton" + nom.toString());
+            if( checked )
+            {
+                task.style.color = "gray";
+            }
+            else task.style.color = "black";
+        }
+	</script>
+</body>
+</html>

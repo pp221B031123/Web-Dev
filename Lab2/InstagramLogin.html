@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Instagram</title>
+    <style>
+        body
+        {
+            background-color: rgb(250, 250, 250);
+            font-family: sans-serif;
+            font-size: 13px;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+      #main
+      {
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #right
+      {
+        height: 80%;
+        width: 20%;
+        margin-left: 20px;
+          display: flex;
+          align-items:center;
+          flex-direction: column;
+      }
+      #left
+      {
+        height: 80%;
+        width: 20%;
+        margin-right: 20px;
+          display: flex;
+          justify-content: center;
+      }
+        #login-box
+        {
+            width: 100%;
+            height: 65%;
+            margin-top:25px;
+            margin-bottom:15px;
+            outline-style: solid;
+            outline-width: 1px;
+            outline-color:lightgray;
+            background-color:white;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+        #signup-box
+        {
+            width: 100%;
+            height: 10%;
+            outline-style: solid;
+            outline-width: 1px;
+            outline-color:lightgray;
+            background-color:white;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+        }
+        #signup-box a
+        {
+            color:rgb(49, 152, 249);
+            text-decoration-line: none;
+            font-weight: bold;
+        }
+        #get-it-on
+        {
+            height:7%;
+            width:75%;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+        #instagram
+        {
+            width: 50%;
+        }
+        #appbutton
+        {
+            height: 100%;
+        }
+        #facebookbutton
+        {
+            margin-top: 12px;
+            margin-bottom: 20px;
+            width: 40%;
+        }
+        #login-box a
+        {
+            font-size: 12px;
+            text-decoration-line: none;
+            color: rgb(12, 57, 109)
+        }
+        #login
+        {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+        input
+        {
+            height: 10%;
+            margin-bottom: 5px;
+            padding: 12px;
+            font-size: 12px;
+            border: 1px solid lightgray;
+            background-color: rgb(250, 250, 250);
+            border-radius: 2px;
+            outline: none;
+        }
+        input:hover
+        {
+            border: 1px solid gray;
+        }
+        button
+        {
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 5px;
+            border: none;
+            margin-top: 13px;
+            padding: 7px 0;
+            cursor: pointer;
+            background-color: rgb(49, 152, 249);
+        }
+        button:hover
+        {
+            background-color: #1877f2;
+        }
+        #hr-typa-thing
+        {
+            color: gray;
+            font-weight: bold;
+            height: 10%;
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #line
+        {
+            height: 1px;
+            width: 40%;
+            background-color: lightgray;
+        }
+        #footer
+        {
+            margin-top: 2%;
+            display: flex;
+            width: 45%;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #footer a
+        {
+            font-size: 12px;
+            text-decoration-line: none;
+            color: gray;
+        }
+        #footer p
+        {
+            margin: 0px;
+            font-size: 12px;
+            text-decoration-line: none;
+            color: gray;
+        }
+        #links
+        {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #from-meta
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #from-meta p
+        {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="left">
+            <img src="inst%20phones.png" height="100%">
+        </div>
+        <div id="right">
+            <div id="login-box">
+                <img src="https://1000logos.net/wp-content/uploads/2017/02/Logo-Instagram.png" id="instagram">
+                <form id="login">
+                    <input type="text" placeholder="Phone number, username, or email">
+                    <input type="password" placeholder="Password">
+                    <button type="submit">Log in</button>
+                </form>
+                <div id="hr-typa-thing">
+                    <div id="line"></div>
+                    <p>OR</p>
+                    <div id="line"></div>
+                </div>
+                <a href="" id="facebookbutton"><img src="loginwithfacebook.png" width="100%"></a>
+                <a href="">Forgot password?</a>
+            </div>
+            <div id="signup-box">
+                <p>Don't have an account? <a href="">Sign Up</a></p>
+            </div>
+            <p>Get the app.</p>
+            <div id="get-it-on">
+                <a href="" id="appbutton"><img src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" height="100%"></a>
+                <a href="" id="appbutton"><img src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" height="100%"></a>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="links">
+            <a href="">Meta</a>
+            <a href="">About</a>
+            <a href="">Blog</a>
+            <a href="">Jobs</a>
+            <a href="">Help</a>
+            <a href="">API</a>
+            <a href="">Privacy</a>
+            <a href="">Terms</a>
+            <a href="">Top Accounts</a>
+            <a href="">Locations</a>
+            <a href="">Instagram Lite</a>
+            <a href="">Contact Uploading & Non-Users</a>
+        </div>
+        <div id="from-meta">
+            <p> English </p>
+            <p>© 2023 Instagram from Meta</p>
+        </div>
+    </div>
+
+</body>
+</html>
