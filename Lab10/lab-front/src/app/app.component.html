@@ -1,0 +1,13 @@
+<h1>Companies</h1>
+
+<ul>
+  <li *ngFor="let company of companies">
+    <a [routerLink]="['/companies', company.id]">
+      {{company.name}}
+    </a>
+  </li>
+</ul>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
